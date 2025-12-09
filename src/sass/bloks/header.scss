@@ -1,0 +1,25 @@
+@use "/src/sass/bace/variables.scss" as *;
+
+.header {
+    min-height: 150px;
+    background-color: $Bg-dark;
+    &__wrapper {
+        display: flex;
+    }
+    &__logo {
+        display: flex;
+        gap: 25px;
+        p {
+            /* padding-left: 25px; */
+            font-weight: 400;
+            font-size: 28px;
+            text-transform: uppercase;
+            color: $light;
+        }
+    }
+    &__nav {
+        ul {
+            display: flex;
+        }
+    }
+}
