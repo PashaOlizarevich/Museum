@@ -1,0 +1,116 @@
+@use "/src/sass/base/variables.scss" as *;
+
+
+.welcome {
+    min-height: 842px;
+    background-color: $Bg-dark;
+    &__wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__content{
+        position: absolute;
+        z-index: 2;
+        p {
+            padding: 25px 0 75px 0;
+            display: block;
+            letter-spacing: 2px;
+            font-weight: 300;
+            font-size: 28px;
+            color: $light;
+        }
+    }
+    &__btn {
+        width: 360px;
+        height: 75px;
+        padding: 0 64px;
+        border-radius: 10px;
+        background-color: $Dark-red;
+        border: none;
+        font-weight: 300;
+        font-size: 22px;
+        letter-spacing: 1.4px;
+        text-align: center;
+        color: $light;
+    }
+    &__title {
+        padding-top: 150px;
+        font-weight: 400;
+        font-size: 80px;
+        line-height: 112%;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $light;
+    }
+    &__swiper {
+        margin-left: 440px;
+    }
+    &__pagination {
+        position: absolute;
+        right: 0;
+        bottom: -50px;
+        width: 600px;
+        height: 120px;
+        background-color:$Bg-dark;
+        z-index: 2;
+    }
+    .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;
+        background-color: $light;
+        border-radius: 0%;
+        opacity: 1;
+        -webkit-tap-highlight-color: transparent;   
+    }
+    .swiper-pagination-bullet-active {
+        background-color: $Font-gold;
+    }
+    &__pagination_color {
+
+    }
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.arrow::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+}
+
+.arrow::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.arrow-left::after {
+  right: auto;
+  left: 5px;
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.arrow-right::after {
+  right: 5px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+
+}

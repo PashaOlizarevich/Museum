@@ -1,25 +1,39 @@
-@use "/src/sass/bace/variables.scss" as *;
+@use "/src/sass/base/variables.scss" as *;
 
 .header {
     min-height: 150px;
     background-color: $Bg-dark;
     &__wrapper {
+        padding: 62px 0;
         display: flex;
+        justify-content: space-between;
     }
     &__logo {
         display: flex;
         gap: 25px;
+        img {
+            width: 49px;
+            height: 26px;
+        }
         p {
-            /* padding-left: 25px; */
             font-weight: 400;
-            font-size: 28px;
+            font-size: 25px;
             text-transform: uppercase;
             color: $light;
+            font-family: $font-title;
         }
     }
     &__nav {
         ul {
             display: flex;
+            gap: 55px;
+            padding: 0;
+            a {
+                font-weight: 100;
+                font-size: 22px;
+                color: $light;
+                text-decoration: none;
+            }
         }
     }
 }

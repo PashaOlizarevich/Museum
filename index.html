@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Museum</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link 
+    href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" 
+    rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -38,6 +44,51 @@
             </div>
         </div>
     </header>
+    <section class="welcome">    
+        <div class="container">  
+            <div class="welcome__wrapper">
+                <div class="welcome__content">
+                    <h1 class="welcome__title">Welcome <br> to the Louvre</h1>
+                    <p>From the castle to the museum</p>
+                    <button class="welcome__btn">Discover the Louvre</button>
+                </div>
+                <!-- Slider main container -->
+                <div class="swiper welcome__swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                            <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img src="/src/img/Welcome_slider/mona_liza_1.jpg" loading="lazy" />
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/src/img/Welcome_slider/liberty_leading the_people_2.jpg" loading="lazy" />
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/src/img/Welcome_slider/la_belle ferronnière_3.jpg" loading="lazy" />
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/src/img/Welcome_slider/the_raft_of_the_medusa_4.jpg" loading="lazy" />
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/src/img/Welcome_slider/Astronomer_5.jpg" loading="lazy" />
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                 <div class="welcome__pagination">
+                    <div class="swiper-pagination welcome__pagination_color"></div>
+                    <button class="swiper-button-prev arrow arrow-left"></button>
+                    <button class="swiper-button-next arrow arrow-right"></button>
+                 </div>
+                
+            </div> 
+        </div>
+    </section>
     <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>

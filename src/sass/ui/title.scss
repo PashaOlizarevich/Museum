@@ -1,0 +1,6 @@
+@use "/src/sass/base/mixins.scss" as *;
+@use "/src/sass/ui/title.scss";
+
+.title-h2 {
+    @include title
+}

@@ -1,6 +1,9 @@
-@use "/src/sass/bace/basic.scss";
-@use "/src/sass/bace/variables.scss" as *;
-
 @use "/src/sass/libs/modern-normalize.min.css";
 
+@use "/src/sass/base/basic.scss";
+@use "/src/sass/base/variables.scss" as *;
+
+
+
 @use "/src/sass/bloks/header.scss";
+@use "/src/sass/bloks/welcome.scss";

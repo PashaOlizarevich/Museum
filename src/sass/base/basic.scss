@@ -1,4 +1,4 @@
-@use "/src/sass/bace/variables.scss" as *;
+@use "/src/sass/base/variables.scss" as *;
 
 h1,
 h2,
@@ -23,6 +23,7 @@ h2,
 h3,
 h4,
 h5 {
+    font-family: "Forum", sans-serif;
     font-size: inherit;
     font-weight: inherit;
 }
@@ -36,7 +37,13 @@ img {
     max-inline-size: 100%;
 }
 
+html {
+	font-family: "Roboto", sans-serif;
+	scroll-behavior: smooth;
+}
+
 .container  {
+    position: relative;
     width: 1440px;
     margin: 0 auto;
 }
