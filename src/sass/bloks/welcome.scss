@@ -2,12 +2,12 @@
 
 
 .welcome {
-    min-height: 842px;
-    background-color: $Bg-dark;
+  min-height: 842px;
+  background-color: $Bg-dark;
+  --swiper-navigation-color: transparent;
+  --swiper-navigation-size: 0;
     &__wrapper {
         position: relative;
-        display: flex;
-        justify-content: space-between;
     }
     &__content{
         position: absolute;
@@ -54,6 +54,31 @@
         height: 120px;
         background-color:$Bg-dark;
         z-index: 2;
+
+        display: flex;
+        align-items: center;
+        padding: 0 75px;
+    }
+
+     /* СЧЁТЧИК 01 | 05 */
+    &__counter {
+      color: $light;
+      font-size: 1rem;
+      white-space: nowrap;   // чтобы "01 | 05" не ломалось на две строки
+    }
+    .swiper-pagination {
+      position: static;
+      width: auto;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+      flex: 1;              // растягиваем, чтобы стрелки ушли вправо
+      justify-content: center;
+    }
+    &__arrows {
+      display: flex;
+      column-gap: 30px;
     }
     .swiper-pagination-bullet {
         width: 15px;
@@ -66,51 +91,44 @@
     .swiper-pagination-bullet-active {
         background-color: $Font-gold;
     }
-    &__pagination_color {
-
+    .arrow {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
     }
-
-.arrow {
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: relative;
-}
-
-.arrow::before {
-  content: "";
-  width: 30px;
-  height: 2px;
-  background: white;
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-}
-
-.arrow::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-top: 2px solid white;
-  border-right: 2px solid white;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
-}
-
-.arrow-left::after {
-  right: auto;
-  left: 5px;
-  transform: translateY(-50%) rotate(-135deg);
-}
-
-.arrow-right::after {
-  right: 5px;
-  transform: translateY(-50%) rotate(45deg);
-}
-
-
+    .arrow::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1.75rem;
+      height: 2px;
+      background: #fff;
+      transform: translate(-50%, -50%);
+    }
+    .arrow-left::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 6px;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid #fff;
+      border-left: 2px solid #fff;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+    .arrow-right::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 6px;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+      transform: translateY(-50%) rotate(45deg);
+    }
 }

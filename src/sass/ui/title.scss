@@ -1,6 +1,18 @@
+@use "/src/sass/base/variables.scss" as *;
 @use "/src/sass/base/mixins.scss" as *;
-@use "/src/sass/ui/title.scss";
+
 
 .title-h2 {
-    @include title
+    @include title;
+    letter-spacing: 5px;
+}
+
+.title-big {
+    @include title;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 112%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $Font-gold;
 }

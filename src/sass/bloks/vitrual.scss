@@ -1,0 +1,43 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.virtual {
+    min-height: 1266px;
+    padding-top: 75px;
+    .title-big {
+        padding: 25px 0 10px 0;
+    }
+    .title-h2 {
+        padding-top: 25px;
+        padding-bottom: 10px;
+    }
+    &__span-big {
+        display: block;
+        width: 1440px;
+        height: 3px;
+        background-color: $Dark-red;
+    }
+    &__wrapper {
+        display: flex;
+        padding-top: 75px;
+        flex-wrap: wrap;
+        column-gap: 60px;
+        row-gap: 75px;
+    }
+    &__span {
+        display: block;
+        width: 300px;
+        height: 2px;
+/*         margin: 10px 140px 0 0; */
+        background-color: $Dark-red;
+    }
+    .p-big {
+        font-size: 22px;
+    }
+    &__p {
+        padding-top: 10px;
+        font-weight: 100;
+        font-size: 18px;
+        color: $Bg-dark;
+    }
+
+}

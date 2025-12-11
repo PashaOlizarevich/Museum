@@ -3,7 +3,9 @@
 @use "/src/sass/base/basic.scss";
 @use "/src/sass/base/variables.scss" as *;
 
-
+@use "/src/sass/ui/title.scss";
 
 @use "/src/sass/bloks/header.scss";
 @use "/src/sass/bloks/welcome.scss";
+@use "/src/sass/bloks/vitrual.scss";
+@use "/src/sass/bloks/picture.scss";

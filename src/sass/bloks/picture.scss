@@ -1,0 +1,39 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.picture {
+    min-height: 865px;
+    background-color: $Bg-dark;
+    &__wrapper {
+        display: flex;
+        padding-top: 75px;
+    }
+    .picture-light {
+        color: $light;
+        padding-bottom: 25px;
+    }
+    &__info {
+        padding-right: 60px;
+    }
+    &__span {
+        display: block;
+        width: 660px;
+        height: 3px;
+        background-color: $Dark-red;
+    }
+    &__text {
+        padding-top: 50px;
+        max-width: 660px;
+        color: $light;
+        p {
+            padding-top: 25px;
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 175%;
+            color: $light;
+            span {
+                color: $Font-gold;
+            }
+        }
+    }
+
+}
