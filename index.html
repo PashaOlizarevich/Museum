@@ -165,116 +165,117 @@
     </section>
     <section class="video">
         <div class="container">
+            <div class="video__text">
+                <h2 class="title-big"></h2>
+            </div>
         <!-- ОБЁРТКА ПЛЕЕРА
                 Нужна, чтобы:
                 1) позиционировать кнопку Play по центру поверх видео
                 2) положить кастомные controls поверх/под видео (позже через CSS) -->
-            <div class="video-player__box">
+            <div class="video__player-box">
+                <!-- 1) САМО ВИДЕО (локально)
+                    controls НЕ используем (иначе браузер покажет свой интерфейс).
+                    preload="metadata" — подтянет длительность/размер, но не будет качать весь файл сразу -->
+                <video class="video__player-media" preload="metadata" poster="/src/img/img_poster/poster0.jpg">
+                    <!-- source: локальный файл -->
+                    <source src="/src/Video/Video_journey/video0.mp4" type="video/mp4" />
+                    Ваш браузер не поддерживает тег video.
+                </video>
 
-            <!-- 1) САМО ВИДЕО (локально)
-                controls НЕ используем (иначе браузер покажет свой интерфейс).
-                preload="metadata" — подтянет длительность/размер, но не будет качать весь файл сразу -->
-            <video class="video-player__media" preload="metadata" poster="/src/img/img_poster/poster0.jpg">
-                <!-- source: локальный файл -->
-                <source src="/src/Video/Video_journey/video0.mp4" type="video/mp4" />
-                Ваш браузер не поддерживает тег video.
-            </video>
-
-            <!-- 2) КНОПКА PLAY ПОВЕРХ ВИДЕО (по центру)
-                Это отдельная кнопка: по клику в JS будет play/pause.
-                aria-label — чтобы screen reader понимал назначение -->
-            <button class="video-player__overlay-play" type="button" aria-label="Play video">
-                <!-- SVG иконка Play (треугольник) -->
-                <svg class="video-player__icon video-player__icon--play" viewBox="0 0 64 64" aria-hidden="true">
-                <!-- Круг (обводка) -->
-                <circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="4"></circle>
-                <!-- Треугольник play -->
-                <path d="M27 20 L27 44 L47 32 Z" fill="currentColor"></path>
-                </svg>
-            </button>
-
-            <!-- 3) ПАНЕЛЬ УПРАВЛЕНИЯ (кастомная)
-                role="group" — говорит, что это группа контролов -->
-            <div class="video-player__controls" role="group" aria-label="Video controls">
-
-                <!-- 3.1) Кнопка Play/Pause (внизу, в панели)
-                    В JS будем менять:
-                    - состояние видео
-                    - иконку/aria-label (Play -> Pause) -->
-                <button class="video-player__btn video-player__btn--play" type="button" aria-label="Play/Pause">
-                <!-- SVG Play (можно в JS менять на Pause) -->
-                <svg class="video-player__icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8 5v14l11-7z" fill="currentColor"></path>
-                </svg>
-                </button>
-
-                <!-- 3.2) Progress-bar (перемотка видео)
-                    input range удобен:
-                    - он и “полоса прогресса”
-                    - и “перемотка” когда пользователь тянет -->
-                <div class="video-player__progress" aria-label="Video progress">
-                <!-- Текущее время (будет заполняться через JS) -->
-                <span class="video-player__time video-player__time--current" aria-label="Current time">
-                    0:00
-                </span>
-
-                <!-- Ползунок прогресса -->
-                <input
-                    class="video-player__progress-range"
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="0"
-                    step="0.1"
-                    aria-label="Seek bar"
-                />
-
-                <!-- Общая длительность (будет заполняться через JS) -->
-                <span class="video-player__time video-player__time--duration" aria-label="Duration">
-                    0:00
-                </span>
-                </div>
-
-                <!-- 3.3) Блок громкости: иконка + “прогресс аудио” (volume range) -->
-                <div class="video-player__volume" aria-label="Volume controls">
-
-                <!-- Кнопка иконки звука (mute/unmute)
-                    В JS можно делать:
-                    - если muted => показывать перечёркнутую иконку
-                    - если не muted => обычную -->
-                <button class="video-player__btn video-player__btn--volume" type="button" aria-label="Mute/Unmute">
-                    <!-- SVG Иконка динамика -->
-                    <svg class="video-player__icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <!-- “корпус” динамика -->
-                    <path d="M3 10v4h4l5 4V6L7 10H3z" fill="currentColor"></path>
-                    <!-- “волны” звука -->
-                    <path d="M16.5 12c0-1.8-1-3.3-2.5-4v8c1.5-.7 2.5-2.2 2.5-4z" fill="currentColor"></path>
-                    <path d="M19 12c0-3-1.7-5.6-4-6.8v2.2c1.3 1 2.2 2.7 2.2 4.6s-.9 3.6-2.2 4.6V18.8c2.3-1.2 4-3.8 4-6.8z" fill="currentColor"></path>
+                <!-- 2) КНОПКА PLAY ПОВЕРХ ВИДЕО (по центру)
+                    Это отдельная кнопка: по клику в JS будет play/pause.
+                    aria-label — чтобы screen reader понимал назначение -->
+                <button class="video__player-overlay-play" type="button" aria-label="Play video">
+                    <!-- SVG иконка Play (треугольник) -->
+                    <svg class="video__player-icon video__player-icon-play" viewBox="0 0 64 64" aria-hidden="true">
+                    <!-- Круг (обводка) -->
+                    <circle cx="32" cy="32" r="29" fill="none" stroke="currentColor" stroke-width="4"></circle>
+                    <!-- Треугольник play -->
+                    <path d="M27 20 L27 44 L47 32 Z" fill="currentColor"></path>
                     </svg>
                 </button>
 
-                <!-- “Прогресс аудио” = ползунок громкости -->
-                <input
-                    class="video-player__volume-range"
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="100"
-                    step="1"
-                    aria-label="Volume"
-                />
+                <!-- 3) ПАНЕЛЬ УПРАВЛЕНИЯ (кастомная)
+                    role="group" — говорит, что это группа контролов -->
+                <div class="video__player-controls" role="group" aria-label="Video controls">
+
+                    <!-- 3.1) Кнопка Play/Pause (внизу, в панели)
+                        В JS будем менять:
+                        - состояние видео
+                        - иконку/aria-label (Play -> Pause) -->
+                    <button class="video__player-btn video__player-btn-play" type="button" aria-label="Play/Pause">
+                    <!-- SVG Play (можно в JS менять на Pause) -->
+                    <svg class="video__player-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" fill="currentColor"></path>
+                    </svg>
+                    </button>
+
+                    <!-- 3.2) Progress-bar (перемотка видео)
+                        input range удобен:
+                        - он и “полоса прогресса”
+                        - и “перемотка” когда пользователь тянет -->
+                    <div class="video__player-progress" aria-label="Video progress">
+                    <!-- Текущее время (будет заполняться через JS) -->
+                    <span class="video__player-time video__player-time-current" aria-label="Current time">
+                        0:00
+                    </span>
+
+                    <!-- Ползунок прогресса -->
+                    <input
+                        class="video__player-progress-range"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="0"
+                        step="0.1"
+                        aria-label="Seek bar"
+                    />
+
+                    <!-- Общая длительность (будет заполняться через JS) -->
+                    <span class="video__player-time video__player-time-duration" aria-label="Duration">
+                        0:00
+                    </span>
+                    </div>
+
+                    <!-- 3.3) Блок громкости: иконка + “прогресс аудио” (volume range) -->
+                    <div class="video__player-volume" aria-label="Volume controls">
+
+                    <!-- Кнопка иконки звука (mute/unmute)
+                        В JS можно делать:
+                        - если muted => показывать перечёркнутую иконку
+                        - если не muted => обычную -->
+                    <button class="video__player-btn video__player-btn-volume" type="button" aria-label="Mute/Unmute">
+                        <!-- SVG Иконка динамика -->
+                        <svg class="video__player-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <!-- “корпус” динамика -->
+                        <path d="M3 10v4h4l5 4V6L7 10H3z" fill="currentColor"></path>
+                        <!-- “волны” звука -->
+                        <path d="M16.5 12c0-1.8-1-3.3-2.5-4v8c1.5-.7 2.5-2.2 2.5-4z" fill="currentColor"></path>
+                        <path d="M19 12c0-3-1.7-5.6-4-6.8v2.2c1.3 1 2.2 2.7 2.2 4.6s-.9 3.6-2.2 4.6V18.8c2.3-1.2 4-3.8 4-6.8z" fill="currentColor"></path>
+                        </svg>
+                    </button>
+
+                    <!-- “Прогресс аудио” = ползунок громкости -->
+                    <input
+                        class="video__player-volume-range"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="100"
+                        step="1"
+                        aria-label="Volume"
+                    />
+                    </div>
+
+                    <!-- 3.4) Fullscreen -->
+                    <button class="video__player-btn video__player-btn-fullscreen" type="button" aria-label="Fullscreen">
+                    <!-- SVG иконка fullscreen -->
+                    <svg class="video__player-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 14H5v5h5v-2H7v-3zm0-4h3V7h2v5H5V5h2v3zm10 7h-3v2h5v-5h-2v3zm0-10V5h-5v2h3v3h2z" fill="currentColor"></path>
+                    </svg>
+                    </button>
+
                 </div>
-
-                <!-- 3.4) Fullscreen -->
-                <button class="video-player__btn video-player__btn--fullscreen" type="button" aria-label="Fullscreen">
-                <!-- SVG иконка fullscreen -->
-                <svg class="video-player__icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 14H5v5h5v-2H7v-3zm0-4h3V7h2v5H5V5h2v3zm10 7h-3v2h5v-5h-2v3zm0-10V5h-5v2h3v3h2z" fill="currentColor"></path>
-                </svg>
-                </button>
-
-            </div>
-
             </div>
         </div>
     </section>

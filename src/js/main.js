@@ -76,20 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
    ========================= */
 
 /* 1) Находим нужные элементы в DOM */
-const player = document.querySelector(".video-player__box");              // контейнер плеера (нужен для fullscreen + классов состояния)
-const video = document.querySelector(".video-player__media");            // сам <video>
-const overlayPlay = document.querySelector(".video-player__overlay-play"); // большая кнопка play по центру
+const player = document.querySelector(".video__player-box");              // контейнер плеера (нужен для fullscreen + классов состояния)
+const video = document.querySelector(".video__player-media");            // сам <video>
+const overlayPlay = document.querySelector(".video__player-overlay-play"); // большая кнопка play по центру
 
-const btnPlay = document.querySelector(".video-player__btn--play");      // play/pause в панели
-const progress = document.querySelector(".video-player__progress-range");// прогресс-бар (перемотка)
+const btnPlay = document.querySelector(".video__player-btn-play");      // play/pause в панели
+const progress = document.querySelector(".video__player-progress-range");// прогресс-бар (перемотка)
 
-const btnVolume = document.querySelector(".video-player__btn--volume");  // кнопка mute/unmute (иконка звука)
+const btnVolume = document.querySelector(".video__player-btn-volume");  // кнопка mute/unmute (иконка звука)
 const volume = document.querySelector(".video-player__volume-range");    // ползунок громкости
 
-const btnFullscreen = document.querySelector(".video-player__btn--fullscreen"); // fullscreen
+const btnFullscreen = document.querySelector(".video__player-btn-fullscreen"); // fullscreen
 
-const timeCurrent = document.querySelector(".video-player__time--current");   // текущее время "0:00"
-const timeDuration = document.querySelector(".video-player__time--duration"); // длительность "0:00"
+const timeCurrent = document.querySelector(".video__player-time-current");   // текущее время "0:00"
+const timeDuration = document.querySelector(".video__player-time-duration"); // длительность "0:00"
 
 /* Если на странице нет плеера (защита), выходим */
 if (!player || !video) {
