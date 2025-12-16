@@ -84,7 +84,7 @@ const btnPlay = document.querySelector(".video__player-btn-play");      // play/
 const progress = document.querySelector(".video__player-progress-range");// прогресс-бар (перемотка)
 
 const btnVolume = document.querySelector(".video__player-btn-volume");  // кнопка mute/unmute (иконка звука)
-const volume = document.querySelector(".video-player__volume-range");    // ползунок громкости
+const volume = document.querySelector(".video__player-volume-range");    // ползунок громкости
 
 const btnFullscreen = document.querySelector(".video__player-btn-fullscreen"); // fullscreen
 
@@ -219,3 +219,7 @@ if (!player || !video) {
     video.currentTime = 0;
   });
 }
+
+document.querySelector('.video__player-overlay-play').addEventListener('click', function() {
+    this.classList.add('hidden'); // Добавляем класс 'hidden' к кнопке, чтобы скрыть её
+});
